@@ -1,0 +1,546 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #0f0f1c, #1c1c3c);
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+body.fade-out {
+    animation: fadeOut 0.5s ease-in-out forwards;
+}
+
+  /* Fade In Animation */
+@keyframes fadeIn {
+    from {
+    opacity: 0;
+    transform: translateY(20px);
+    }
+    to {
+    opacity: 1;
+    transform: translateY(0);
+    }
+}
+
+  /* Fade Out Animation */
+@keyframes fadeOut {
+    from {
+    opacity: 1;
+    transform: translateY(0);
+    }
+    to {
+    opacity: 0;
+    transform: translateY(-20px);
+    }
+}
+
+.logo-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.sidebar-logo {
+    width: 90px;
+    height: auto;
+    border-radius: 50%;
+}
+
+#sidebarMenu {
+    background-color: #1e1e30;
+    padding: 20px;
+    width: 240px;
+    height: 100%;
+}
+
+  /* Hide Checkbox */
+#toggleSidebarMenu {
+    display: none;
+}
+
+  /* Sidebar Container */
+#sidebarMenu {
+    height: 100vh;
+    width: 260px;
+    position: fixed;
+    right: -300px;
+    top: 0;
+    background: linear-gradient(135deg, #2d2d44, #4b4b72);
+    transition: all 0.4s ease;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    border-left: 4px solid #ffdd40;
+}
+
+  /* Sidebar Open State */
+#toggleSidebarMenu:checked + .sidebarToggleIcon + #sidebarMenu {
+    right: 0;
+}
+
+  /* Sidebar Content */
+.sidebarMenuContent {
+    padding: 80px 30px;
+    list-style: none;
+}
+
+.sidebarMenuContent li {
+    margin-bottom: 40px;
+    font-size: 20px;
+    color: #ffffff;
+    transition: transform 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.sidebarMenuContent li a {
+    color: #ffdd40;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sidebarMenuContent li:hover a {
+    color: #ffffff;
+    text-shadow: 0 0 15px #ffdd40;
+}
+
+.sidebarMenuContent span {
+    font-weight: bold;
+    color: #ffdd40;
+}
+
+  /* Toggle Icon */
+.sidebarToggleIcon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.bar {
+    width: 35px;
+    height: 5px;
+    background-color: #ffdd40;
+    margin: 6px 0;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+
+  /* Animation for Toggle */
+#toggleSidebarMenu:checked + .sidebarToggleIcon .part-1 {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+#toggleSidebarMenu:checked + .sidebarToggleIcon .part-2 {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+#toggleSidebarMenu:checked + .sidebarToggleIcon .horizontal {
+    opacity: 0;
+}
+
+  /* Hover Effect for Toggle */
+.sidebarToggleIcon:hover .bar {
+    background-color: #ffffff;
+    box-shadow: 0 0 10px #ffdd40;
+} 
+
+footer {
+    background: linear-gradient(to right, #1e1e1e, #252525);
+    color: #f5f5f5;
+    padding: 12px 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    margin-top: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-logo {
+    width: 50px; /* Adjust based on your logo size */
+    height: auto;
+    filter: brightness(90%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer-logo:hover {
+    transform: scale(1.1);
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.footer-container p {
+    margin: 5px 0;
+    line-height: 1.6;
+    font-weight: 300;
+    opacity: 0.8;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.footer-container p:hover {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-left {
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .footer-right {
+        text-align: center;
+    }
+
+    .footer-logo {
+        width: 40px;
+    }
+}
+
+
+.controls {
+    display: flex;
+    justify-content: flex-end; /* Aligns buttons to the right */
+    background: rgba(255, 255, 255, 0.08);
+    padding: 20px;
+    gap: 10px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    margin: 20px auto;
+    max-width: 800px;
+    
+}
+
+.controls input[type="range"]::-webkit-slider-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #ff2060, #ff7e00);
+    box-shadow: 0 0 12px rgba(255, 221, 64, 0.8);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.controlsenhance {
+    display: flex;
+    justify-content: flex-end; /* Aligns buttons to the right */
+    background: rgba(255, 255, 255, 0.08);
+    padding: 20px;
+    gap: 10px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    margin: 20px auto;
+    max-width: 1200px;
+    
+}
+
+.controlsenhance input[type="range"]::-webkit-slider-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #ff2060, #ff7e00);
+    box-shadow: 0 0 12px rgba(255, 221, 64, 0.8);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.controlsThreshold {
+    display: flex;
+    justify-content: flex-end; /* Aligns buttons to the right */
+    background: rgba(255, 255, 255, 0.08);
+    padding: 20px;
+    gap: 10px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    margin: 20px auto;
+    max-width: 400px;
+    
+}
+
+.controlsThreshold input[type="range"]::-webkit-slider-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #ff2060, #ff7e00);
+    box-shadow: 0 0 12px rgba(255, 221, 64, 0.8);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.controlrest {
+    display: flex;
+    justify-content: flex-end; /* Aligns buttons to the right */
+    background: rgba(255, 255, 255, 0.08);
+    padding: 5px;
+    gap: 10px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    margin: 20px auto;
+    max-width: 200px;
+    
+}
+
+#reset-controls {
+    background: linear-gradient(45deg, #ff2060, #ff7e00);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(255, 126, 0, 0.4);
+}
+
+#reset-controls:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(255, 126, 0, 0.6);
+}
+
+#reset-controls:active {
+    transform: scale(0.95);
+}
+
+/* Main Container */
+.container {
+    max-width: 800px;
+    margin: 10px auto;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 22px;
+    border-radius: 25px;
+    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(20px);
+    transition: all 0.3s ease-in-out;
+}
+
+.container:hover {
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* Title */
+h1 {
+    margin-bottom: 15px;
+    font-size: 35px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #ffdd40;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    
+    /* Neon Glow Effect */
+    text-shadow: 0 0 8px rgba(255, 221, 64, 0.8), 0 0 20px rgba(255, 126, 0, 0.6), 0 0 30px rgba(255, 126, 0, 0.4);
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.2); /* Adds a smooth outline */
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Hover Interaction */
+h1:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 12px rgba(255, 221, 64, 1), 0 0 25px rgba(255, 126, 0, 0.9), 0 0 40px rgba(255, 100, 0, 0.8);
+}
+
+/* Animated Glow Effect */
+@keyframes neon-glow {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 221, 64, 0.8), 0 0 20px rgba(255, 126, 0, 0.6);
+    }
+    100% {
+        text-shadow: 0 0 15px rgba(255, 221, 64, 1), 0 0 25px rgba(255, 126, 0, 0.9), 0 0 35px rgba(255, 100, 0, 0.8);
+    }
+}
+
+h1 {
+    animation: neon-glow 1.5s infinite alternate ease-in-out;
+}
+
+
+/* Top Control Buttons */
+.top-controls {
+    display: flex;
+    justify-content: flex-end; /* Aligns buttons to the right */
+    background: rgba(255, 255, 255, 0.08);
+    padding: 16px; /* Slightly reduced padding for better spacing */
+    gap: 12px; /* More uniform spacing between elements */
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    margin: 20px auto;
+    max-width: 1100px; /* Slightly reduced for better layout */
+}
+
+.second-controls {
+    display: flex;
+    justify-content: flex-end; /* Aligns buttons to the right */
+    background: rgba(255, 255, 255, 0.08);
+    padding: 16px; /* Slightly reduced padding for better spacing */
+    gap: 12px; /* More uniform spacing between elements */
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    margin: 20px auto;
+    max-width: 1100px; /* Slightly reduced for better layout */
+}
+
+/* Dropdown Styling */
+select {
+    padding: 12px 16px;
+    font-size: 16px;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #ff2060, #ff7e00);
+    color: white;
+    border: 2px solid transparent;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0px 6px 18px rgba(255, 255, 255, 0.12);
+    transition: all 0.3s ease-in-out;
+    appearance: none;
+    min-width: 140px; /* Ensuring a consistent minimum width */
+}
+
+/* Hover and Focus Effects */
+select:hover, select:focus {
+    background: linear-gradient(45deg, #ff7e00, #ff2060);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 0px 12px rgba(255, 221, 64, 0.7);
+    transform: scale(1.03);
+}
+
+/* Styling the Options Inside */
+select option {
+    background: #2c2c54;
+    color: white;
+    font-size: 15px; /* Adjusted for consistency */
+    padding: 10px;
+    text-align: center;
+}
+
+/* When an Option is Hovered */
+select option:hover {
+    background: #ff7e00;
+    color: black;
+}
+
+/* Button Design */
+button, .upload-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    background: linear-gradient(45deg, #ff7e00, #ff2060);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    min-width: 120px; /* Increased for better usability */
+    cursor: pointer;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.12);
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover, .upload-btn:hover {
+    background: linear-gradient(45deg, #ff7e00, #ff2060);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 0px 12px rgba(255, 221, 64, 0.7);
+    transform: scale(1.05);
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .top-controls {
+        flex-direction: column;
+        align-items: center;
+        padding: 12px;
+    }
+
+    select, button {
+        width: 100%; /* Make buttons and select dropdown full-width */
+        text-align: center;
+    }
+}
+
+
+
+/* Image Box */
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.box {
+    width: 50%;
+    max-width: 400px;
+    text-align: center;
+    padding: 22px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+.box:hover {
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.box img, .box canvas {
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.box:hover img, .box:hover canvas {
+    transform: scale(1.08) rotate(1deg);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .top-controls {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .image-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .box {
+        width: 100%;
+    }
+}

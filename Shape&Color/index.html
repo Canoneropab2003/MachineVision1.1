@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viscora Editor Photo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="logo/logo.png">
+    <script src="opencv.js" async onload="onOpenCvReady();"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+
+    <input type="checkbox" class="toggleSidebarMenu" id="toggleSidebarMenu">
+<label for="toggleSidebarMenu" class="sidebarToggleIcon">
+<div class="bar diagonal part-1"></div>
+<div class="bar horizontal"></div>
+<div class="bar diagonal part-2"></div>
+</label>
+
+<div id="sidebarMenu">
+<!-- Logo Section -->
+<div class="logo-container">
+    <img src="logo/logo.png" alt="Viscore Logo" class="sidebar-logo">
+</div>
+
+<ul class="sidebarMenuContent">
+    <li>Viscore <span>Editor</span></li>
+    <li><a href="C:\Users\ASUS\Documents\Log in\home.html">Home Page</a></li>
+    <li><a href="C:\Users\ASUS\Documents\Final-Output\Machine_Vision\Viscore.html">Photo Editor</a></li>
+    <li><a href="C:\Users\ASUS\Documents\Final-Output\Image Convolution\index.html">Image Convolution</a></li>
+    <li><a href="C:\Users\ASUS\Documents\Final-Output\Semi-Final\index.html">Image Orientation, Histogram & Binary, Image Projection</a></li>
+</ul>
+</div>
+    
+
+    
+    <div class="top-controls">  <!-- Now separate from the main container -->
+        <button onclick="segmentation()" class="button">Segmentation</button>
+        <button onclick="boxObjectsimage()" class="button">Box Image</button>
+        <button onclick="boxObjects()" class="button">Box Objects</button>
+        <button onclick="detectCentroidsImage()" class="button">Centroids Image</button>
+        <button onclick="detectCentroids()" class="button">Centroids Object</button>
+        <button onclick="calculateImageArea()" class="button">Area Image</button>
+        <button onclick="calculateObjectAreas()" class="button">Area Objects</button>
+    </div>
+
+    <div class="second-controls">
+        <button onclick="translateImage()" class="button">Translate Image</button>
+        <input type="text" id="translateX" placeholder="X shift" class="input-modern" readonly>
+        <input type="text" id="translateY" placeholder="Y shift" class="input-modern" readonly>
+
+
+        <button onclick="resetImage()" class="button">Reset Image</button>
+        <button onclick="shapedetect()" class="button">Shape & Color</button>
+    </div>
+
+    <div class="thirs-controls">
+        
+    </div>
+    
+    <div class="containerokie">
+        <label for="imageInput" class="upload-btn">📂 Upload Image</label>
+        <input type="file" id="imageInput" accept="image/*" hidden>
+        <button id="save">💾 Save</button>
+    </div>
+
+    <div class="container">
+        <h1>Viscore</h1>
+
+        <div class="image-container">
+            <div class="box">
+                <h3>Original</h3>
+                <canvas id="originalCanvas"></canvas>
+            </div>
+            <div class="box">
+                <h3>Processed Image</h3>
+                <canvas id="editedCanvas"></canvas>
+            </div>
+        </div>
+    </div>
+    
+    <div class="containerinfookie" style="display: none;">
+        <div class="row">
+        <div class="col-sm">
+            <div class="summary-section">
+            <h2 class="section-title">Summary</h2>
+            <div class="summary-grid">
+                <div class="summary-card">
+                <h4>Total Object Area</h4>
+                <p id="objectArea">0</p>
+                </div>
+                <div class="summary-card">
+                <h4>Total Shape Types</h4>
+                <p id="shapeTypes">0</p>
+                </div>
+                <div class="summary-card">
+                <h4>Total Color Types</h4>
+                <p id="colorTypes">0</p>
+                </div>
+            </div>
+            </div>
+    
+            <div class="details-section">
+            <h3 class="section-title">Detected Shapes</h3>
+            <div id="shapeCountList" class="data-list"></div>
+            </div>
+    
+            <div class="details-section">
+            <h3 class="section-title">Detected Colors</h3>
+            <div id="colorCountList" class="data-list"></div>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+
+    <div class="containerinfo" style="display: none;">
+        <h4>X & Y Coordinates of Image/Object</h4>
+            <div class="row">
+        <div class="col-sm">
+            <div id="shapeCount" class="alert alert-info"></div>
+        </div>
+            </div>
+    </div>
+
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-left">
+            <img src="logo/logo.png" alt="Viscora Logo" class="footer-logo">
+            <p>Viscora &copy; 2025</p>
+        </div>
+        <div class="footer-right">
+            <p>All rights reserved</p>
+            <p>Crafted with ❤️ by cañonero</p>
+        </div>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
